@@ -38,7 +38,7 @@ The PDF first page marks Zixuan Wang, Yuqi Liu, and Yuxin Chen with stars. The e
 - [Official project](https://visualprompt-vla.github.io/)
 - [Official repository](https://github.com/JIA-Lab-research/VP-VLA)
 
-The project explicitly labels Zixuan Wang, Yuxin Chen, and Yuqi Liu as equal contributors. Eight-author order matches arXiv. Submitted March 23, 2026; no conference acceptance was verified, so it is labelled arXiv preprint.
+The project explicitly labels Zixuan Wang, Yuxin Chen, and Yuqi Liu as equal contributors. On 2026-10-24, the user corrected the omission of Bei Yu. The current [arXiv v3 record](https://arxiv.org/abs/2603.22003v3) confirms nine authors, with Bei Yu between Shu Liu and Jiaya Jia; the public project page still lists only eight authors. No contribution marker is added for Bei Yu. Submitted March 23, 2026; no conference acceptance was verified, so it is labelled arXiv preprint.
 
 ## Beyond Data Scaling / VLAct
 
@@ -66,8 +66,12 @@ Jinhui Ye and Ning Gao are equal contributors. Yuxin Chen is sixth author withou
 - [Formal proceedings PDF](https://papers.nips.cc/paper_files/paper/2025/file/48cf767269db2bc2a0349d42315d2f87-Paper-Conference.pdf)
 - [arXiv abstract](https://arxiv.org/abs/2510.20217)
 - [Official repository](https://github.com/yx-chen-ust/EditInfinity)
+- [Official README](https://raw.githubusercontent.com/yx-chen-ust/EditInfinity/main/README.md)
+- [Official project](https://editinfinity.github.io/EditInfinity/)
 
 The proceedings confirm **NeurIPS 2025** and DOI `10.52202/085713-1694`. Jiahuan Wang and Yuxin Chen are equal contributors; Guangming Lu and Wenjie Pei are corresponding authors. All five authors retained. The arXiv record is from October 2025.
+
+On 2026-10-24, the project link was verified from the README's Project badge and added to the site.
 
 ## GKDT
 
