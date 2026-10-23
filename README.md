@@ -2,7 +2,7 @@
 
 Personal academic website for Yuxin Chen, a Computer Science PhD student at The Hong Kong University of Science and Technology. Adapted from [PRISM](https://github.com/xyjoey/PRISM), with research-area publication groups and authorship-aware ordering.
 
-**Website:** [yuxinchen-academic.github.io/yuxinchen-academic](https://yuxinchen-academic.github.io/yuxinchen-academic/)
+**Website:** [yuxinchen-academic.github.io](https://yuxinchen-academic.github.io/)
 
 ## Develop locally
 
@@ -57,14 +57,14 @@ Paper metadata was checked against paper PDFs and official project sources, with
 
 The workflow in `.github/workflows/deploy.yml` checks TypeScript, builds the static site, and deploys `out/` on pushes to `main`. It can also be run manually from the repository's **Actions** tab. Repository **Settings → Pages → Source** must be set to **GitHub Actions**.
 
-The workflow sets `NEXT_PUBLIC_BASE_PATH=/yuxinchen-academic` for this project URL. To reproduce the production build locally:
+The repository is named `yuxinchen-academic.github.io` and publishes the user site at the domain root. The workflow sets `NEXT_PUBLIC_BASE_PATH` to an empty string, so page links and assets use root paths. To reproduce the production build locally:
 
 ```bash
 npx tsc --noEmit
-NEXT_PUBLIC_BASE_PATH=/yuxinchen-academic npm run build
+NEXT_PUBLIC_BASE_PATH= npm run build
 ```
 
-For a custom domain or a repository named `yuxinchen-academic.github.io`, update the workflow's base path and the canonical website URL in the source configuration before rebuilding. Generated `out/`, `.next/` and dependencies are ignored by Git.
+If the hosting domain or path changes, update the workflow's base path, metadata URL, sitemap, and robots file before rebuilding. Generated `out/`, `.next/` and dependencies are ignored by Git.
 
 ## Attribution
 

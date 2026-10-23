@@ -32,7 +32,6 @@ export default function PublicationsList({ config, publications, embedded = fals
       <div className="mb-8">
         <Heading className={`${embedded ? 'text-2xl' : 'text-4xl'} mb-3 font-serif font-bold text-primary`}>{config.title}</Heading>
         {config.description && <p className="max-w-2xl text-base leading-relaxed text-neutral-600">{config.description}</p>}
-        <p className="mt-3 text-xs leading-relaxed text-neutral-500">Grouped by research area. First-author work, followed by co-first-author work, then other collaborations. * Equal contribution; † Corresponding author.</p>
       </div>
       <div className="mb-8 flex flex-wrap gap-3">
         <label className="min-w-0 grow sm:grow-0">

@@ -16,7 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_BASE_PATH: /yuxinchen-academic
+      NEXT_PUBLIC_BASE_PATH: ""
       NEXT_TELEMETRY_DISABLED: 1
     steps:
       - name: Check out source
