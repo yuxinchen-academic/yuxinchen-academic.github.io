@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yuxinchen-academic.github.io/yuxinchen-academic/sitemap.xml

@@ -1,10 +1,10 @@
 {
-  "name": "PRISM",
-  "version": "1.3.3",
+  "name": "yuxinchen-academic",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build --no-lint",
     "start": "next start",
     "lint": "next lint"
   },

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { assetPath } from '@/lib/assetPath';
 import './globals.css';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
@@ -14,6 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const openGraphLocale = runtimeI18n.defaultLocale === 'zh' ? 'zh_CN' : 'en_US';
 
   return {
+    metadataBase: new URL('https://yuxinchen-academic.github.io/yuxinchen-academic/'),
     title: {
       default: config.site.title,
       template: `%s | ${config.site.title}`,
@@ -24,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
     creator: config.author.name,
     publisher: config.author.name,
     icons: {
-      icon: config.site.favicon,
+      icon: assetPath(config.site.favicon),
     },
     openGraph: {
       type: 'website',
@@ -131,16 +133,7 @@ export default function RootLayout({
   return (
     <html lang={runtimeI18n.defaultLocale} className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" href={config.site.favicon} type="image/svg+xml" />
-        <link rel="dns-prefetch" href="https://jialeliu.com" />
-        <link rel="preconnect" href="https://jialeliu.com" crossOrigin="" />
-        <link
-          rel="preload"
-          as="font"
-          type="font/woff2"
-          href="https://jialeliu.com/fonts/georgiab.woff2"
-          crossOrigin=""
-        />
+        <link rel="icon" href={assetPath(config.site.favicon)} type="image/svg+xml" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -168,6 +161,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <ThemeProvider>
           <LocaleProvider config={runtimeI18n}>
             <Navigation
@@ -178,7 +172,7 @@ export default function RootLayout({
               itemsByLocale={navigationByLocale}
               siteTitleByLocale={siteTitleByLocale}
             />
-            <main className="min-h-screen pt-16 lg:pt-20">
+            <main id="main-content" className="min-h-screen pt-16 lg:pt-20">
               {children}
             </main>
             <Footer

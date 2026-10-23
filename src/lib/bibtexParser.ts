@@ -2,6 +2,7 @@ import { Publication, PublicationType, ResearchArea } from '@/types/publication'
 import { getConfig } from './config';
 import { getRuntimeI18nConfig } from './i18n/config';
 import { parseBibTeXInline } from './bibtexInline';
+import { comparePublications } from './publicationOrder';
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const bibtexParse = require('bibtex-parse-js');
@@ -87,13 +88,21 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
       doi: tags.doi,
       url: tags.url,
       code: tags.code,
+      project: tags.project,
+      pdfUrl: tags.pdf,
+      category: cleanBibTeXString(tags.category) || undefined,
+      authorship: ['first', 'co-first', 'other'].includes(tags.authorship)
+        ? tags.authorship as Publication['authorship']
+        : authors.some(author => author.isHighlighted && author.isCoAuthor)
+          ? 'co-first'
+          : authors[0]?.isHighlighted ? 'first' : 'other',
       abstract: cleanBibTeXString(tags.abstract),
       description: cleanBibTeXString(tags.description || tags.note),
       selected,
       preview,
 
       // Store original BibTeX (excluding custom fields)
-      bibtex: reconstructBibTeX(entry, ['selected', 'preview', 'description', 'keywords', 'code']),
+      bibtex: reconstructBibTeX(entry, ['selected', 'preview', 'description', 'keywords', 'code', 'project', 'pdf', 'category', 'authorship']),
     };
 
     // Clean up undefined fields
@@ -104,21 +113,7 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
     });
 
     return publication;
-  }).sort((a: Publication, b: Publication) => {
-    // Sort by year (descending), then by month if available
-    if (b.year !== a.year) return b.year - a.year;
-
-    // For month comparison, treat missing months as January (1) to ensure they appear last within the year
-    const monthA = typeof a.month === 'string' ?
-      (monthMapping[a.month.toLowerCase()] || parseInt(a.month) || 1) :
-      (a.month || 1);
-    const monthB = typeof b.month === 'string' ?
-      (monthMapping[b.month.toLowerCase()] || parseInt(b.month) || 1) :
-      (b.month || 1);
-
-    // Sort by month descending (December to January)
-    return monthB - monthA;
-  });
+  }).sort(comparePublications);
 }
 
 function getHighlightNames(locale?: string): string[] {

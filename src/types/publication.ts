@@ -35,7 +35,10 @@ export interface Publication {
   pmid?: string;
   url?: string;
   code?: string;
+  project?: string;
   pdfUrl?: string;
+  category?: string;
+  authorship?: 'first' | 'co-first' | 'other';
   tags: string[];
   keywords?: string[];
   type: PublicationType;

@@ -1,0 +1,14 @@
+type = "card"
+title = "Education"
+
+[[items]]
+title = "The Hong Kong University of Science and Technology"
+subtitle = "PhD in Computer Science"
+date = "2025–present"
+content = "Advisor: [Prof. Jiaya Jia](https://jiaya.me/)"
+
+[[items]]
+title = "Harbin Institute of Technology, Shenzhen"
+subtitle = "Bachelor’s in Computer Science"
+date = "2021–2025"
+content = "Advisor: [Prof. Wenjie Pei](https://wenjiepei.github.io/)"
