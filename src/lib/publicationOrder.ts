@@ -6,6 +6,7 @@ const categoryOrder = [
   'Generative Models & Image Editing',
   'Image Generation & Editing',
   'Visual Perception',
+  'Vision-Language Models & Safety',
 ];
 
 function monthNumber(month?: string): number {

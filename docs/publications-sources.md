@@ -87,15 +87,29 @@ The official repository confirms **ECCV 2026**. Eight-author order matches the p
 
 Canonical citation author is **StarVLA Community**. Section 9 distinguishes core authors from community contributors and lists “Yuxing Chen” among core authors. **The user confirmed on 2026-10-23 that this appendix entry is them.** Therefore the site preserves the corporate citation author, adds “Core contributor: Yuxin Chen” to the display description, and does not invent an individual author order. Technical Report, first submitted April 6, 2026. This is a separate work from StarVLA-α.
 
-## Original figure assets
+## Risk Awareness Injection (RAI)
 
-Images are original paper/project figures, used without processing, editing, cropping, or generation. Attribution is retained here and each publication links to its paper and official repository.
+- [Official ICML proceedings entry](https://proceedings.mlr.press/v306/wang26ac.html)
+- [Final proceedings PDF](https://raw.githubusercontent.com/mlresearch/v306/main/assets/wang26ac/wang26ac.pdf)
+- [arXiv paper](https://arxiv.org/abs/2602.03402)
+- [arXiv HTML](https://arxiv.org/html/2602.03402v3)
 
-| Local file | Source | Use |
-| --- | --- | --- |
-| `public/papers/editinfinity.jpg` | [Official EditInfinity image1.jpg](https://raw.githubusercontent.com/yx-chen-ust/EditInfinity/main/assets/image1.jpg); copied from the user's existing local EditInfinity checkout | Editing examples / paper teaser |
-| `public/papers/resettle.png` | [Official RESETTLE method.png](https://raw.githubusercontent.com/JIA-Lab-research/RESETTLE/main/assets/method.png) | Framework diagram |
-| `public/papers/vp-vla.png` | [Official VP-VLA pipeline.png](https://visualprompt-vla.github.io/static/images/pipeline.png) | Pipeline diagram |
-| `public/papers/gkdt.jpg` | [Official GKDT demonstration](https://raw.githubusercontent.com/AlanLuSun/General-Keypoint-Detection/main/assets/MO_example1_alpaca_150.jpg) | Multi-object keypoint detection example |
+Added at the user's request on 2026-10-23. PMLR confirms **ICML 2026**, volume 306, pages 125494–125514. All six authors are retained in the official order. Yuxin Chen is the second author, without an equal-contribution statement in the final paper; `authorship` is `other`. Hongjie Jiang and Ming Li are corresponding authors. The initial arXiv release month is February. The subject grouping is **Vision-Language Models & Safety**. No official code repository or separate project page was identified, so those links are omitted.
 
-No generic stock images or synthesized result figures have been substituted for research outputs.
+## Original method figures
+
+Every publication now includes an original method, architecture, or system pipeline figure. The previous teaser and example images were replaced. All nine image assets were downloaded unchanged from the original paper or official project, then visually verified. The page contains each entire diagram, centered within equal-size frames, and links to the full-resolution image. No generated diagrams or edited research results are used.
+
+| Paper | Local file | Figure | Original asset |
+| --- | --- | --- | --- |
+| RESETTLE | `public/papers/methods/resettle.png` | [2](https://arxiv.org/html/2610.12185v1#S4.F2) | [Original image](https://arxiv.org/html/2610.12185v1/method.png) |
+| CarryOn | `public/papers/methods/carryon.png` | [2](https://arxiv.org/html/2610.21453v1#S3.F2) | [Original image](https://vincent2311.github.io/Projects/CarryOn/assets/architecture.png) |
+| VP-VLA | `public/papers/methods/vp-vla.png` | [3](https://arxiv.org/html/2603.22003v1#S3.F3) | [Original image](https://arxiv.org/html/2603.22003v1/pipeline_cropped.png) |
+| VLAct | `public/papers/methods/vlact.png` | [3](https://arxiv.org/html/2608.27550v2#S3.F3) | [Original image](https://starvla.github.io/VLAct/assets/method.png) |
+| StarVLA-α | `public/papers/methods/starvla-alpha.png` | [3](https://arxiv.org/html/2604.11757v2#S3.F3) | [Original image](https://arxiv.org/html/2604.11757v2/model-compare.png) |
+| StarVLA community report | `public/papers/methods/starvla.png` | [3](https://arxiv.org/html/2604.05014v1#S3.F3) | [Original image](https://arxiv.org/html/2604.05014v1/starvla_dataflow.png) |
+| Risk Awareness Injection | `public/papers/methods/rai.png` | [4](https://arxiv.org/html/2602.03402v1) | [Original image](https://arxiv.org/html/2602.03402v1/pipeline_2_cropped.png) |
+| EditInfinity | `public/papers/methods/editinfinity.png` | [2](https://arxiv.org/html/2510.20217v2) | [Original image](https://arxiv.org/html/2510.20217v2/image2_1.png) |
+| GKDT | `public/papers/methods/gkdt.png` | [3](https://arxiv.org/html/2607.00752v1) | [Original image](https://arxiv.org/html/2607.00752v1/pipelinev2.png) |
+
+CarryOn uses the official project PNG because the arXiv HTML SVG omits connecting arrows and parts of the architecture. StarVLA-α uses Figure 3 (action-head architectures); the distinct StarVLA community report uses Figure 3 from its own paper (complete modular data and training flow).

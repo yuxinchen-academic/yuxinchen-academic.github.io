@@ -16,10 +16,10 @@ interface ProfileProps {
 export default function Profile({ author, social, researchInterests }: ProfileProps) {
   return (
     <aside className="lg:sticky lg:top-28">
-      <div className="w-56 h-64 mx-auto lg:mx-0 mb-7 rounded-xl overflow-hidden border border-neutral-200 bg-neutral-100">
+      <div className="relative w-56 h-64 mx-auto lg:mx-0 mb-7 rounded-xl overflow-hidden border border-neutral-200 bg-neutral-100">
         {author.avatar ? (
           <Image src={assetPath(author.avatar)} alt={author.name} width={448} height={512}
-            className="w-full h-full object-cover object-[45%_50%] scale-[1.35]" priority />
+            className="absolute left-[-17.5%] top-[-17.5%] h-[135%] w-[135%] max-w-none object-cover object-[45%_50%]" priority />
         ) : (
           <div className="h-full flex flex-col items-center justify-center bg-[#eae7df] text-[#283a49]" aria-label="Yuxin Chen initials">
             <span className="font-serif text-7xl tracking-tight">YC</span>

@@ -39,13 +39,15 @@ Use standard BibTeX metadata for the title, authors, venue, year and paper URL. 
 
 | Field | Values / purpose |
 | --- | --- |
-| `category` | `Embodied AI & Robot Learning`, `Generative Models & Image Editing`, or `Visual Perception` |
+| `category` | `Embodied AI & Robot Learning`, `Generative Models & Image Editing`, `Visual Perception`, or `Vision-Language Models & Safety` |
 | `authorship` | `first`, `co-first`, or `other`, relative to Yuxin Chen |
 | `project` | Project website URL |
 | `code` | Source repository URL |
-| `preview` | Image path under `public/`, such as `/papers/example.jpg` |
+| `preview` | Original method/architecture image under `public/papers/methods/`; required for every paper |
 | `description` | Short research summary |
 | `selected` | `true` for the optional Selected Publications section; the current homepage lists all papers |
+
+Each paper has an original method diagram, centered in a consistent image column. Clicking a diagram opens the full-resolution image. Research-area and year filters remain available.
 
 Within each research area, publications appear in the order **first author → co-first author → other author**, then newest year and month first. The original author order is retained. Append `#` to each equal-contribution author's name and `*` to a corresponding author's name; the renderer adds the displayed markers and removes them from copied BibTeX. Authorship rank is specified explicitly, rather than inferred from these symbols.
 

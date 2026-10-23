@@ -41,11 +41,17 @@ export default function PublicationCard({ publication: pub, compact = false }: P
 
   return (
     <article className={`min-w-0 rounded-xl border border-neutral-200 bg-background ${compact ? 'p-4 sm:p-5' : 'p-5 sm:p-6'}`}>
-      <div className={`flex flex-col ${compact ? 'sm:flex-row' : 'md:flex-row'} gap-5`}>
+      <div className={`grid grid-cols-1 items-center gap-5 ${compact ? 'sm:grid-cols-[144px_minmax(0,1fr)]' : 'md:grid-cols-[208px_minmax(0,1fr)]'}`}>
         {previewPath && (
-          <div className={`relative aspect-[16/10] shrink-0 overflow-hidden rounded-lg bg-white ${compact ? 'sm:w-36 sm:self-start' : 'md:w-48 md:self-start'}`}>
-            <Image src={assetPath(previewPath)} alt={`Overview of ${pub.title}`} fill className="object-contain p-1" sizes={compact ? '(max-width: 640px) 90vw, 144px' : '(max-width: 768px) 90vw, 192px'} />
-          </div>
+          <a
+            href={assetPath(previewPath)}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View method figure for ${pub.title}`}
+            className="publication-figure relative block aspect-[4/3] w-full max-w-sm justify-self-center overflow-hidden rounded-lg border border-neutral-200 bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          >
+            <Image src={assetPath(previewPath)} alt={`Method diagram for ${pub.title}`} fill className="object-contain object-center p-2" sizes={compact ? '(max-width: 640px) 90vw, 144px' : '(max-width: 768px) 90vw, 208px'} />
+          </a>
         )}
         <div className="min-w-0 flex-1">
           <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs">

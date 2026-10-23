@@ -1,4 +1,4 @@
 type = "publication"
 title = "Publications"
-description = "Research in embodied intelligence, generative vision, and visual perception."
+description = "Research in embodied intelligence, generative vision, visual perception, and multimodal safety."
 source = "publications.bib"
